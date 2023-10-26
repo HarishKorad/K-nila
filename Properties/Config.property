@@ -8,6 +8,7 @@ Month = January
 Year = 2000
 Address = Bangalore
 Phone = 9876543210
+PatientPage = Patient.page
 Caption = AttachementUploaded
 Reason = DeletePatientDetails
 VerifyMessage = The attachment was successfully uploaded.

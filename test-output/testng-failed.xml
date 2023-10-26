@@ -6,16 +6,17 @@
       <class name="com.test.ApplicationUnderTest">
         <methods>
           <include name="reportSetup"/>
+          <include name="pastVisit"/>
           <include name="captureVitals"/>
           <include name="after"/>
-          <include name="afterClass"/>
-          <include name="patientDetails"/>
           <include name="dashboard"/>
+          <include name="patientDetails"/>
+          <include name="tearDown"/>
           <include name="startVisit"/>
           <include name="setup"/>
-          <include name="mergeVisit"/>
-          <include name="login"/>
           <include name="registerPatient"/>
+          <include name="login"/>
+          <include name="mergeVisit"/>
           <include name="deletePatient"/>
         </methods>
       </class> <!-- com.test.ApplicationUnderTest -->

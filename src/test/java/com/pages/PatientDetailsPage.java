@@ -1,5 +1,7 @@
 package com.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -45,6 +47,17 @@ public class PatientDetailsPage extends BaseClass {
 		this.captureVitals = captureVitals;
 	}
 
+	@FindBy(xpath = "(//label[contains(text(),'Start')]/ancestor::div/preceding-sibling::div/child::div[@class='datetimepicker-days']/table/tbody)[1]/tr/td[@class='day disabled']")
+	private List<WebElement> datePicker;
+
+	public List<WebElement> getDatePicker() {
+		return datePicker;
+	}
+
+	public void setDatePicker(List<WebElement> datePicker) {
+		this.datePicker = datePicker;
+	}
+
 	@FindBy(xpath = "//div[contains(text(),'Merge')]")
 	private WebElement mergeVisit;
 
@@ -67,7 +80,7 @@ public class PatientDetailsPage extends BaseClass {
 		this.pastVisit = pastVisit;
 	}
 
-	@FindBy(xpath = "//div[text()='Vitals, Attachment Upload']")
+	@FindBy(xpath = "//div[text()='Vitals']")
 	private WebElement vitalsAttachment;
 
 	public WebElement getVitalsAttachment() {

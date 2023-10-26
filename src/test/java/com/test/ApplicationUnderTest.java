@@ -13,7 +13,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -74,11 +73,11 @@ public class ApplicationUnderTest extends BaseClass {
 		Assert.assertTrue(admin.getNameVerify().getText().equalsIgnoreCase(getPropertyFileValue("Username")));
 		test.log(LogStatus.PASS, "Verify Dashboard name contains Username ignores case", "Expected Username: "
 				+ getPropertyFileValue("Username") + " Actual Username: " + admin.getNameVerify().getText());
-		if (admin.getRegisterPatientButton().isDisplayed()) {
-			click(admin.getRegisterPatientButton());
-		} else {
-			click(admin.getRegisterPatientButton1());
-		}
+//		try {
+//			click(admin.getRegisterPatientButton());
+//		} catch (Exception e) {
+//		}
+		click(admin.getRegisterPatientButton1());
 	}
 
 	@Test(priority = 3, dependsOnMethods = "dashboard")
@@ -123,9 +122,9 @@ public class ApplicationUnderTest extends BaseClass {
 	public void patientDetails() throws Throwable {
 		test.log(LogStatus.INFO, "Patient details page");
 		patient = new PatientDetailsPage();
-		Assert.assertTrue(driver.getCurrentUrl().contains("Patient.page"));
-		test.log(LogStatus.PASS, "Verify patient page name is in URL",
-				"Verifying url page contains Patient.page: " + driver.getCurrentUrl().contains("Patient.page"));
+		Assert.assertTrue(driver.getCurrentUrl().contains(getPropertyFileValue("PatientPage")));
+		test.log(LogStatus.PASS, "Verify patient page name is in URL", "Verifying url page contains Patient.page: "
+				+ driver.getCurrentUrl().contains(getPropertyFileValue("PatientPage")));
 		int birthDay = Integer.parseInt(getPropertyFileValue("Date"));
 		String birthMonthName = getPropertyFileValue("Month");
 		int birthYear = Integer.parseInt(getPropertyFileValue("Year"));
@@ -161,7 +160,7 @@ public class ApplicationUnderTest extends BaseClass {
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		enterText(patient.getCaptionTextArea(), getPropertyFileValue("Caption"));
 		click(patient.getUploadButton());
 
@@ -176,32 +175,27 @@ public class ApplicationUnderTest extends BaseClass {
 			test.log(LogStatus.PASS, "Verify attachments uploaded",
 					"Actual msg: " + patient.getUploaded().isDisplayed());
 		} catch (Exception e) {
-//			e.printStackTrace();
+			e.printStackTrace();
 		}
 
 		Thread.sleep(3000);
 		String dateEntry = patient.getLastEntry().getText();
-		SimpleDateFormat simple = new SimpleDateFormat("dd.MMM.yyyy");
+		SimpleDateFormat sim = new SimpleDateFormat("dd.MMM.yyyy");
 		Date date = new Date();
-		Assert.assertEquals(simple.format(date), dateEntry);
-		test.log(LogStatus.PASS, "Last entry date", "Expected last entry date: " + simple.format(date)
+		Assert.assertEquals(sim.format(date), dateEntry);
+		test.log(LogStatus.PASS, "Last entry date", "Expected last entry date: " + sim.format(date)
 				+ " Acutal last entry date: " + patient.getLastEntry().getText());
-
 		click(patient.getEndVisitButton());
 		click(patient.getConfirmEndVisitButton());
-		Thread.sleep(3000);
 		test.log(LogStatus.INFO, "End patient visit");
-
 	}
 
 	@Test(priority = 6, dependsOnMethods = "startVisit")
 	public void captureVitals() throws Throwable {
 		test.log(LogStatus.INFO, "Start patient visit again");
-
 		click(patient.getStartVisitButton());
 		click(patient.getStartVisitConfirmButton());
 		click(patient.getCaptureVitals());
-
 		test.log(LogStatus.INFO, "Capture vitals");
 		vital = new VitalPage();
 		enterText(vital.getHeight(), getPropertyFileValue("Height"));
@@ -211,15 +205,11 @@ public class ApplicationUnderTest extends BaseClass {
 		double weightInKg = Double.parseDouble(getPropertyFileValue("Weight"));
 		double heightInCm = Double.parseDouble(getPropertyFileValue("Height"));
 		double heightInM = heightInCm / 100.0;
-		if (heightInM <= 0) {
-			throw new IllegalArgumentException("Height must be greater than 0.");
-		}
 		double bmi = weightInKg / (heightInM * heightInM);
 		int bmi1 = (int) bmi;
 		Assert.assertTrue(vital.getBmi().getText().contains((String.valueOf(bmi1))));
 		test.log(LogStatus.PASS, "Verify bmi",
 				"Expected bmi: " + String.valueOf(bmi) + " Actual bmi: " + vital.getBmi().getText());
-
 		click(vital.getSaveForm());
 		click(vital.getSaveButton());
 		click(patient.getEndVisit());
@@ -227,14 +217,21 @@ public class ApplicationUnderTest extends BaseClass {
 		test.log(LogStatus.INFO, "End visit");
 		Thread.sleep(3000);
 		click(patient.getPatientPage());
-
 		try {
-			Assert.assertEquals(vital.getHeight().getText(), patient.getHeight().getText());
-			Assert.assertEquals(vital.getWeight().getText(), patient.getWeight().getText());
-			Assert.assertEquals(vital.getBmi().getText(), patient.getBmi().getText());
+			Assert.assertEquals(getPropertyFileValue("Height"), patient.getHeight().getText());
+			test.log(LogStatus.PASS, "Verify height", "Expected height: " + getPropertyFileValue("Height")
+					+ " Acutual height: " + patient.getHeight().getText());
+			Assert.assertEquals(getPropertyFileValue("Weight"), patient.getWeight().getText());
+			test.log(LogStatus.PASS, "Verify weight", "Expected weight: " + getPropertyFileValue("Weight")
+					+ " Acutual weight: " + patient.getWeight().getText());
+			Assert.assertTrue(patient.getBmi().getText().contains(String.valueOf(bmi1)));
+			test.log(LogStatus.PASS, "Verify bmi",
+					"Verifying bmi contains: " + patient.getBmi().getText().contains(String.valueOf(bmi1)));
 			Assert.assertTrue(patient.getVitalsAttachment().getText().contains("Vitals"));
+			test.log(LogStatus.PASS, "Verify attachment", "Expected status that contains Vitals in attachment: "
+					+ patient.getVitalsAttachment().getText().contains("Vitals"));
 		} catch (Exception e) {
-//			e.printStackTrace();
+			e.printStackTrace();
 		}
 
 	}
@@ -247,41 +244,46 @@ public class ApplicationUnderTest extends BaseClass {
 		click(patient.getMergeVisit2());
 		click(patient.getMergeVisitBtn());
 		click(patient.getReturnBtn());
-		Thread.sleep(2000);
-
-		click(patient.getPastVisit());
-//		SimpleDateFormat simple1 = new SimpleDateFormat("dd");
-//		Date date1 = new Date();
-//		simple1.format(date1);
-//		List<WebElement> findElements = driver.findElements(By.tagName("td"));
-//		for (WebElement webElement : findElements) {
-//			String text = webElement.getText();
-//			if(date1>text){
-//				
-//			}
-//		}
-		click(patient.getCancelbtn());
+		test.log(LogStatus.INFO, "Patient visit merged");
 	}
 
 	@Test(priority = 8, dependsOnMethods = "mergeVisit")
+	public void pastVisit() {
+		click(patient.getPastVisit());
+		test.log(LogStatus.INFO, "Past visit clicked and verifying future date is not clickable");
+		LocalDate currentDate = LocalDate.now();
+		int dayOfMonth = currentDate.getDayOfMonth();
+		List<WebElement> datePicker = patient.getDatePicker();
+		for (WebElement webElement : datePicker) {
+			String dateText = webElement.getText();
+			if (dayOfMonth <= Integer.parseInt(dateText)) {
+				Assert.assertFalse(webElement.isSelected());
+				test.log(LogStatus.PASS, "Future date",
+						"Verifying future date: " + webElement.getText() + " is not clickable");
+			}
+		}
+		click(patient.getCancelbtn());
+		test.log(LogStatus.INFO, "Patient past visit ended");
+	}
+
+	@Test(priority = 9, dependsOnMethods = "pastVisit")
 	public void deletePatient() throws IOException, Throwable {
 		test.log(LogStatus.INFO, "Delete patient visit");
 		click(patient.getDeletePatientButton());
 		enterText(patient.getReasonForDeleteInput(), getPropertyFileValue("Reason"));
 		click(patient.getConfirmDeleteButton());
 		test.log(LogStatus.PASS, "Patient deleted successfully");
-
 	}
 
 	@AfterMethod
 	public void after(ITestResult result) throws Throwable {
-		if (result.getStartMillis() == ITestResult.FAILURE) {
+		if (result.getStatus() == ITestResult.SUCCESS) {
 			screenShot();
 		}
 	}
 
 	@AfterTest
-	public void afterClass() throws Throwable {
+	public void tearDown() throws Throwable {
 //		driver.quit();
 		report.endTest(test);
 		report.flush();
