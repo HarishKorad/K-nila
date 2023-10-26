@@ -2,155 +2,155 @@
 <testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-26T14:37:51 IST" name="Default suite" finished-at="2023-10-26T14:39:09 IST" duration-ms="78054">
+  <suite started-at="2023-10-27T01:45:01 IST" name="Default suite" finished-at="2023-10-27T01:46:44 IST" duration-ms="102346">
     <groups>
     </groups>
-    <test started-at="2023-10-26T14:37:51 IST" name="Default test" finished-at="2023-10-26T14:39:09 IST" duration-ms="78054">
+    <test started-at="2023-10-27T01:45:01 IST" name="Default test" finished-at="2023-10-27T01:46:44 IST" duration-ms="102346">
       <class name="com.test.ApplicationUnderTest">
-        <test-method is-config="true" signature="reportSetup()[pri:0, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:37:51 IST" name="reportSetup" finished-at="2023-10-26T14:37:51 IST" duration-ms="302" status="PASS">
+        <test-method is-config="true" signature="reportSetup()[pri:0, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:45:01 IST" name="reportSetup" finished-at="2023-10-27T01:45:02 IST" duration-ms="318" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportSetup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:37:51 IST" name="setup" finished-at="2023-10-26T14:37:58 IST" duration-ms="6626" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:45:02 IST" name="setup" finished-at="2023-10-27T01:45:15 IST" duration-ms="13497" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="login()[pri:1, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:37:58 IST" name="login" finished-at="2023-10-26T14:38:00 IST" duration-ms="2342" status="PASS">
+        <test-method signature="login()[pri:1, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:45:15 IST" name="login" finished-at="2023-10-27T01:45:19 IST" duration-ms="3277" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:38:00 IST" name="after" finished-at="2023-10-26T14:38:00 IST" duration-ms="238" status="PASS">
+        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:45:19 IST" name="after" finished-at="2023-10-27T01:45:19 IST" duration-ms="351" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=login status=SUCCESS method=ApplicationUnderTest.login()[pri:1, instance:com.test.ApplicationUnderTest@2b30a42c] output={null}]]]>
+                <![CDATA[[TestResult name=login status=SUCCESS method=ApplicationUnderTest.login()[pri:1, instance:com.test.ApplicationUnderTest@451001e5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
-        <test-method signature="dashboard()[pri:2, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:38:00 IST" name="dashboard" finished-at="2023-10-26T14:38:05 IST" depends-on-methods="com.test.ApplicationUnderTest.login" duration-ms="4386" status="PASS">
+        <test-method signature="dashboard()[pri:2, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:45:19 IST" name="dashboard" finished-at="2023-10-27T01:45:32 IST" depends-on-methods="com.test.ApplicationUnderTest.login" duration-ms="12634" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dashboard -->
-        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:38:05 IST" name="after" finished-at="2023-10-26T14:38:05 IST" duration-ms="164" status="PASS">
+        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:45:32 IST" name="after" finished-at="2023-10-27T01:45:32 IST" duration-ms="181" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=dashboard status=SUCCESS method=ApplicationUnderTest.dashboard()[pri:2, instance:com.test.ApplicationUnderTest@2b30a42c] output={null}]]]>
+                <![CDATA[[TestResult name=dashboard status=SUCCESS method=ApplicationUnderTest.dashboard()[pri:2, instance:com.test.ApplicationUnderTest@451001e5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
-        <test-method signature="registerPatient()[pri:3, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:38:05 IST" name="registerPatient" finished-at="2023-10-26T14:38:06 IST" depends-on-methods="com.test.ApplicationUnderTest.dashboard" duration-ms="1635" status="PASS">
+        <test-method signature="registerPatient()[pri:3, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:45:32 IST" name="registerPatient" finished-at="2023-10-27T01:45:33 IST" depends-on-methods="com.test.ApplicationUnderTest.dashboard" duration-ms="1455" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerPatient -->
-        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:38:06 IST" name="after" finished-at="2023-10-26T14:38:07 IST" duration-ms="121" status="PASS">
+        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:45:33 IST" name="after" finished-at="2023-10-27T01:45:33 IST" duration-ms="141" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=registerPatient status=SUCCESS method=ApplicationUnderTest.registerPatient()[pri:3, instance:com.test.ApplicationUnderTest@2b30a42c] output={null}]]]>
+                <![CDATA[[TestResult name=registerPatient status=SUCCESS method=ApplicationUnderTest.registerPatient()[pri:3, instance:com.test.ApplicationUnderTest@451001e5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
-        <test-method signature="patientDetails()[pri:4, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:38:07 IST" name="patientDetails" finished-at="2023-10-26T14:38:11 IST" depends-on-methods="com.test.ApplicationUnderTest.registerPatient" duration-ms="4888" status="PASS">
+        <test-method signature="patientDetails()[pri:4, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:45:33 IST" name="patientDetails" finished-at="2023-10-27T01:45:40 IST" depends-on-methods="com.test.ApplicationUnderTest.registerPatient" duration-ms="6982" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- patientDetails -->
-        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:38:11 IST" name="after" finished-at="2023-10-26T14:38:12 IST" duration-ms="170" status="PASS">
+        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:45:40 IST" name="after" finished-at="2023-10-27T01:45:41 IST" duration-ms="169" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=patientDetails status=SUCCESS method=ApplicationUnderTest.patientDetails()[pri:4, instance:com.test.ApplicationUnderTest@2b30a42c] output={null}]]]>
+                <![CDATA[[TestResult name=patientDetails status=SUCCESS method=ApplicationUnderTest.patientDetails()[pri:4, instance:com.test.ApplicationUnderTest@451001e5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
-        <test-method signature="startVisit()[pri:5, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:38:12 IST" name="startVisit" finished-at="2023-10-26T14:38:45 IST" depends-on-methods="com.test.ApplicationUnderTest.patientDetails" duration-ms="33399" status="PASS">
+        <test-method signature="startVisit()[pri:5, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:45:41 IST" name="startVisit" finished-at="2023-10-27T01:46:19 IST" depends-on-methods="com.test.ApplicationUnderTest.patientDetails" duration-ms="38765" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startVisit -->
-        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:38:45 IST" name="after" finished-at="2023-10-26T14:38:45 IST" duration-ms="173" status="PASS">
+        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:46:19 IST" name="after" finished-at="2023-10-27T01:46:20 IST" duration-ms="181" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=startVisit status=SUCCESS method=ApplicationUnderTest.startVisit()[pri:5, instance:com.test.ApplicationUnderTest@2b30a42c] output={null}]]]>
+                <![CDATA[[TestResult name=startVisit status=SUCCESS method=ApplicationUnderTest.startVisit()[pri:5, instance:com.test.ApplicationUnderTest@451001e5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
-        <test-method signature="captureVitals()[pri:6, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:38:45 IST" name="captureVitals" finished-at="2023-10-26T14:39:02 IST" depends-on-methods="com.test.ApplicationUnderTest.startVisit" duration-ms="16461" status="PASS">
+        <test-method signature="captureVitals()[pri:6, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:46:20 IST" name="captureVitals" finished-at="2023-10-27T01:46:37 IST" depends-on-methods="com.test.ApplicationUnderTest.startVisit" duration-ms="17830" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureVitals -->
-        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:39:02 IST" name="after" finished-at="2023-10-26T14:39:02 IST" duration-ms="229" status="PASS">
+        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:46:37 IST" name="after" finished-at="2023-10-27T01:46:38 IST" duration-ms="234" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=captureVitals status=SUCCESS method=ApplicationUnderTest.captureVitals()[pri:6, instance:com.test.ApplicationUnderTest@2b30a42c] output={null}]]]>
+                <![CDATA[[TestResult name=captureVitals status=SUCCESS method=ApplicationUnderTest.captureVitals()[pri:6, instance:com.test.ApplicationUnderTest@451001e5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
-        <test-method signature="mergeVisit()[pri:7, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:39:02 IST" name="mergeVisit" finished-at="2023-10-26T14:39:07 IST" depends-on-methods="com.test.ApplicationUnderTest.captureVitals" duration-ms="5140" status="PASS">
+        <test-method signature="mergeVisit()[pri:7, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:46:38 IST" name="mergeVisit" finished-at="2023-10-27T01:46:42 IST" depends-on-methods="com.test.ApplicationUnderTest.captureVitals" duration-ms="4515" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mergeVisit -->
-        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:39:07 IST" name="after" finished-at="2023-10-26T14:39:07 IST" duration-ms="225" status="PASS">
+        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:46:42 IST" name="after" finished-at="2023-10-27T01:46:42 IST" duration-ms="185" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=mergeVisit status=SUCCESS method=ApplicationUnderTest.mergeVisit()[pri:7, instance:com.test.ApplicationUnderTest@2b30a42c] output={null}]]]>
+                <![CDATA[[TestResult name=mergeVisit status=SUCCESS method=ApplicationUnderTest.mergeVisit()[pri:7, instance:com.test.ApplicationUnderTest@451001e5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
-        <test-method signature="pastVisit()[pri:8, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:39:07 IST" name="pastVisit" finished-at="2023-10-26T14:39:08 IST" depends-on-methods="com.test.ApplicationUnderTest.mergeVisit" duration-ms="406" status="PASS">
+        <test-method signature="pastVisit()[pri:8, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:46:42 IST" name="pastVisit" finished-at="2023-10-27T01:46:43 IST" depends-on-methods="com.test.ApplicationUnderTest.mergeVisit" duration-ms="364" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pastVisit -->
-        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:39:08 IST" name="after" finished-at="2023-10-26T14:39:08 IST" duration-ms="132" status="PASS">
+        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:46:43 IST" name="after" finished-at="2023-10-27T01:46:43 IST" duration-ms="157" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=pastVisit status=SUCCESS method=ApplicationUnderTest.pastVisit()[pri:8, instance:com.test.ApplicationUnderTest@2b30a42c] output={null}]]]>
+                <![CDATA[[TestResult name=pastVisit status=SUCCESS method=ApplicationUnderTest.pastVisit()[pri:8, instance:com.test.ApplicationUnderTest@451001e5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
-        <test-method signature="deletePatient()[pri:9, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:39:08 IST" name="deletePatient" finished-at="2023-10-26T14:39:08 IST" depends-on-methods="com.test.ApplicationUnderTest.pastVisit" duration-ms="287" status="PASS">
+        <test-method signature="deletePatient()[pri:9, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:46:43 IST" name="deletePatient" finished-at="2023-10-27T01:46:43 IST" depends-on-methods="com.test.ApplicationUnderTest.pastVisit" duration-ms="268" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deletePatient -->
-        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:39:08 IST" name="after" finished-at="2023-10-26T14:39:08 IST" duration-ms="252" status="PASS">
+        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:46:43 IST" name="after" finished-at="2023-10-27T01:46:43 IST" duration-ms="162" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=deletePatient status=SUCCESS method=ApplicationUnderTest.deletePatient()[pri:9, instance:com.test.ApplicationUnderTest@2b30a42c] output={null}]]]>
+                <![CDATA[[TestResult name=deletePatient status=SUCCESS method=ApplicationUnderTest.deletePatient()[pri:9, instance:com.test.ApplicationUnderTest@451001e5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.test.ApplicationUnderTest@2b30a42c]" started-at="2023-10-26T14:39:08 IST" name="tearDown" finished-at="2023-10-26T14:39:09 IST" duration-ms="354" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.test.ApplicationUnderTest@451001e5]" started-at="2023-10-27T01:46:43 IST" name="tearDown" finished-at="2023-10-27T01:46:44 IST" duration-ms="554" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

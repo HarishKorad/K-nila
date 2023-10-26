@@ -19,6 +19,17 @@ public class AdminDashboardPage extends BaseClass {
 		return patientName;
 	}
 
+	@FindBy(xpath = "//li[@class='nav-item logout']")
+	private WebElement logout;
+
+	public WebElement getLogout() {
+		return logout;
+	}
+
+	public void setLogout(WebElement logout) {
+		this.logout = logout;
+	}
+
 	public void setPatientName(WebElement patientName) {
 		this.patientName = patientName;
 	}

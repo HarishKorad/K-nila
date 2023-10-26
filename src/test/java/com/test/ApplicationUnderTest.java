@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -273,6 +274,8 @@ public class ApplicationUnderTest extends BaseClass {
 		enterText(patient.getReasonForDeleteInput(), getPropertyFileValue("Reason"));
 		click(patient.getConfirmDeleteButton());
 		test.log(LogStatus.PASS, "Patient deleted successfully");
+		((JavascriptExecutor) driver).executeScript("arguments[0].click", admin.getLogout());
+		test.log(LogStatus.INFO, "User logout");
 	}
 
 	@AfterMethod
@@ -284,7 +287,8 @@ public class ApplicationUnderTest extends BaseClass {
 
 	@AfterTest
 	public void tearDown() throws Throwable {
-//		driver.quit();
+		driver.quit();
+		test.log(LogStatus.INFO, "Browser Closed");
 		report.endTest(test);
 		report.flush();
 	}

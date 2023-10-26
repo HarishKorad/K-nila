@@ -97,7 +97,7 @@ public class BaseClass {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
 		File dest = new File(
-				"C:\\Users\\sanja\\eclipse-workspace\\Knila\\Screenshot\\" + System.currentTimeMillis() + ".png");
+				"C:\\Users\\sanja\\eclipse-workspace\\K-nila\\Screenshot\\" + System.currentTimeMillis() + ".png");
 		FileUtils.copyFile(src, dest);
 	}
 }
